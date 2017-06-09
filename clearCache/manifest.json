@@ -1,0 +1,24 @@
+{ 
+	"name": "日报",				//名称 
+	"manifest_version":2,  
+	"version": "0.1",					//版本号 
+	"description": "填写日报",	//描述信息，会显示在插件属性里 
+	"options_page": "popup.html",
+	"icons": {
+		"16": "css/images/panda_16.png",
+		"48": "css/images/panda_48.png"
+	 },
+	
+	"browser_action": {
+		"default_icon": "css/images/panda_32.png",        
+        "default_title": "日报",
+        "default_popup": "popup.html"
+    },	
+	"background": { "scripts": ["js/jquery-2.1.1.min.js", "js/background.js"] },
+	"permissions": [     
+		 "http://myhengtian/Default.aspx",
+		 "contextMenus",
+		 "browsingData",
+		 "tabs"
+	 ]
+}

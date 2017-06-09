@@ -1,0 +1,81 @@
+﻿
+<!-- 丁剑自己的
+<input type="button" value="清除缓存" id="btn1" onclick="test()"/>
+<button id='btn2' onclick="notify()">显示桌面通知</button>
+<div id="msg"></div>		
+<iframe src="http://myhengtian/Default.aspx" width="900px" height="700px" id="kaoqin"></iframe>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/content_scripts.js"></script>
+ -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>My Chrome Tools</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/magic-input.css">
+</head>
+<body style="background-color: rgb(167, 214, 191)">
+
+	<div id="main" style="margin: 0 auto; padding: 0;">
+		<div style="height: 40px; background-color: #89B39F;" id="title">
+			<img src="css/images/panda_48.png" style="float: left; height: 40px"></img>
+			<span style="font-size: 26px;">我的小工具</span> <img id="title"
+				title="返回主界面" src="css/images/back.png"
+				style="cursor: hand; float: right; height: 40px; transform: rotateX(180deg);"></img>
+		</div>
+		<div id="msgContent" style="display: none">
+			<span id="msg" style="color: red"></span>
+		</div>
+		<div
+			style="width: 300px; height: 200px; margin: auto; background-color: rgb(167, 214, 191);"
+			id="menu">
+			<div style="height: 80px; padding-top: 20px;">
+				<a class="button" href="#" id="clearCachePage">清除缓存</a>
+			</div>
+			<div style="height: 80px">
+				<a class="button button-two" href="#" id="writeReportPage">填写日报</a>
+			</div>
+		</div>
+
+		<div id="cachePage"
+			style="width: 300px; display: none; text-align: left; padding: 10px 0 10px 10px;">
+			<div class="warpper">
+				<div>
+					<span style="font-size: 16px; font-weight: bold;">需要清除的数据</span>
+				</div>
+				<div>
+					<label> 
+						<span>清除指定时间段内的数据</span> 
+						<select id="clear-browser-data-time-period" pref="browser.clear_data.time_period" data-type="number"
+							style="height: 22px; border-radius: 3px; border: 1px solid #d7d7d7;">
+								<option value="0">过去一小时</option>
+								<option value="1">过去一天</option>
+								<option value="2">过去一周</option>
+								<option value="3">过去四周</option>
+								<option value="4">全部</option>
+						</select>
+					</label> 
+					<label><input type="checkbox" name="cacheOption" value="history" class="mgc mgc-success mgc-lg">浏览记录</label> 
+					<label><input type="checkbox" name="cacheOption" value="downloads" class="mgc mgc-success mgc-lg" checked="">下载记录</label> 
+					<label><input type="checkbox" name="cacheOption" value="cookies"class="mgc mgc-success mgc-lg" checked="">Cookie及其他网站数据</label> 
+					<label><input type="checkbox" name="cacheOption" value="cache" class="mgc mgc-success mgc-lg" checked="">缓存的图片和文件</label> 
+					<label><input type="checkbox" name="cacheOption" value="passwords" class="mgc mgc-success mgc-lg">密码</label> 
+					<label><input type="checkbox" name="cacheOption" value="formData" class="mgc mgc-success mgc-lg">自动填充表单数据</label> 
+					<label><input type="checkbox" name="cacheOption" value="appcache" class="mgc mgc-success mgc-lg">托管应用数据</label>
+					<label><input type="checkbox" name="cacheOption" value="serverBoundCertificates" class="mgc mgc-success mgc-lg">媒体许可</label> 
+					<label><input type="checkbox" name="cacheOption" value="pluginData" class="mgc mgc-success mgc-lg">插件数据</label>
+					<div style="margin-top: 10px; text-align: center;">
+						<a href="#" class="btn green" id="cacheClear">开始清除</a> <a href="#"
+							class="btn green" id="cacheCancel">取消</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="reportPage" style="display: none">
+			<iframe src="http://myhengtian/Default.aspx" width="900px"
+				height="700px" id="reportFrame"></iframe>
+		</div>
+	</div>
+	<script src="js/popup.js"></script>
+</body>
+</html>
